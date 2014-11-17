@@ -14,7 +14,7 @@ This is the twelth in the fourteen part series:
 * [Turning Your Brain Inside Out With Continuations](continuations.md)
 * [Playing Dice with the Universe](amb.md)
 * Functional I/O (or at least "O")
-* [Functional I/O (including "I" this time](functional_i.md)
+* [Functional I/O (including "I" this time)](functional_i.md)
 * [Historical Debugging](debugging.md)
 
 I just watched [Matthias Felleisen’s talk](http://vimeo.com/6631514) on Functional I/O and read [this paper](http://delivery.acm.org/10.1145/1600000/1596561/p47-felleisen.pdf?key1=1596561&key2=4733387621&coll=GUIDE&dl=GUIDE&CFID=73785769&CFTOKEN=48695734) and decided to bolt on a little I/O system to the FScheme interpreter we’ve been building. It’s a pretty nice FRP-type system. Reading the paper or watching the talk is well worth the time.

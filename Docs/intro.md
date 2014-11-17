@@ -14,7 +14,7 @@ This is the beginning of a fourteen part series:
 * [Turning Your Brain Inside Out With Continuations](continuations.md)
 * [Playing Dice with the Universe](amb.md)
 * [Functional I/O (or at least "O")](functional_o.md)
-* [Functional I/O (including "I" this time](functional_i.md)
+* [Functional I/O (including "I" this time)](functional_i.md)
 * [Historical Debugging](debugging.md)
 
 One of my New Year’s goals is to re-read [Lisp in Small Pieces](http://www.amazon.com/gp/product/0521545668/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=0521545668&linkCode=as2&tag=bookporn-20&linkId=PMDZINVZLBD65EE4) and implement all 11 interpreters and 2 compilers. As much as I like the "Lisp in Lisp" idea and enjoyed the eureka moment in SICP when Sussman writes the metacircular interpreter on the board to the music from Space Odyssey, I don't want to do Lisp in Lisp itself. Lisp in F# sounds like more fun.

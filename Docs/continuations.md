@@ -14,7 +14,7 @@ This is the tenth in the fourteen part series:
 * Turning Your Brain Inside Out With Continuations
 * [Playing Dice with the Universe](amb.md)
 * [Functional I/O (or at least "O")](functional_o.md)
-* [Functional I/O (including "I" this time](functional_i.md)
+* [Functional I/O (including "I" this time)](functional_i.md)
 * [Historical Debugging](debugging.md)
 
 We’re into one of the most magical chapters in [Bill Hails’ book](http://billhails.net/Book/). We’re about to add a very strange and dangerous feature to the interpreter: `call/cc` (“call with current continuation”). To appreciate the beauty of it, we’ll first look at continuation passing style (CPS) in general, what it’s good for, then how `call/cc` works, some of the implementation details, and finally how it’s used in Scheme.

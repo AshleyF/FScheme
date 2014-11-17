@@ -14,7 +14,7 @@ This is the thirteen in the fourteen part series:
 * [Turning Your Brain Inside Out With Continuations](continuations.md)
 * [Playing Dice with the Universe](amb.md)
 * [Functional I/O (or at least "O")](functional_o.md)
-* Functional I/O (including "I" this time
+* Functional I/O (including "I" this time)
 * [Historical Debugging](debugging.md)
 
 Now to add input to our Functional I/O system; following up on the [previous post](functional_o.md). We already had bouncing balls so how ‘bout we add a mouse-controlled paddle and make a primitive “Pong”?
@@ -87,8 +87,8 @@ With the bouncing balls from before, Pong is the first interactive game that com
 Give it a try:
 
 ``` scheme
-> (load "pong.scm") 
-Loaded 'pong.scm'. 
+> (load "Pong.scm") 
+Loaded 'Pong.scm'. 
 > (run)
 ```
 

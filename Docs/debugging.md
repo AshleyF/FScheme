@@ -14,7 +14,7 @@ This is the last in the fourteen part series:
 * [Turning Your Brain Inside Out With Continuations](continuations.md)
 * [Playing Dice with the Universe](amb.md)
 * [Functional I/O (or at least "O")](functional_o.md)
-* [Functional I/O (including "I" this time](functional_i.md)
+* [Functional I/O (including "I" this time)](functional_i.md)
 * Historical Debugging
 
 [Historical Debugging introduced in VS2010](http://channel9.msdn.com/posts/VisualStudio/Historical-Debugger-and-Test-Impact-Analysis-in-Visual-Studio-Team-System-2010/) is quite the engineering feat! We can actually pull off something similar in our interpreter with amazing ease. Because of the pure nature of our functional I/O system (last [two](functional_o.md) [posts](functional_i.md)) and the already centrally managed world state and input it’s very straight forward to implement.

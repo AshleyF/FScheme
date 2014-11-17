@@ -14,7 +14,7 @@ This is the third in the fourteen part series:
 * [Turning Your Brain Inside Out With Continuations](continuations.md)
 * [Playing Dice with the Universe](amb.md)
 * [Functional I/O (or at least "O")](functional_o.md)
-* [Functional I/O (including "I" this time](functional_i.md)
+* [Functional I/O (including "I" this time)](functional_i.md)
 * [Historical Debugging](debugging.md)
 
 Continuing along in [Bill Hails’ book](http://billhails.net/Book/v2.html). Be sure to follow the [previous posts](let.md).
