@@ -132,4 +132,4 @@ And voila!
 
 In the [next post](funcional_i.md) we add the “I” of I/O.
 
-## Next: [Functional I/O (including "I" this time](functinal_i.md)
+## Next: [Functional I/O (including "I" this time)](functinal_i.md)
