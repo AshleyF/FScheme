@@ -1,6 +1,6 @@
 # Playing Dice with the Universe
 
-This is the tenth in the fourteen part series:
+This is the eleventh in the fourteen part series:
 
 * [Scheme in F#](Docs/intro.md)
 * [Just 'let' Me Be!](let.md)
