@@ -14,7 +14,7 @@ This is the eleventh in the fourteen part series:
 * [Turning Your Brain Inside Out With Continuations](continuations.md)
 * Playing Dice with the Universe
 * [Functional I/O (or at least "O")](functional_o.md)
-* [Functional I/O (including "I" this time](functinal_i.md)
+* [Functional I/O (including "I" this time](functional_i.md)
 * [Historical Debugging](debugging.md)
 
 We’re now taking the first small step into the world of nondeterministic logic programming (chapter 16 of [Bill Hails’ book](http://billhails.net/Book/)). Hopefully you enjoyed the [last post about continuation passing](continuations.md) and found the idea to be ripe with potential power; indeed so powerful that we’re going to use it now to bifurcate the universe! No really, we are…

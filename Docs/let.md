@@ -14,7 +14,7 @@ This is the second in the fourteen part series:
 * [Turning Your Brain Inside Out With Continuations](continuations.md)
 * [Playing Dice with the Universe](amb.md)
 * [Functional I/O (or at least "O")](functional_o.md)
-* [Functional I/O (including "I" this time](functinal_i.md)
+* [Functional I/O (including "I" this time](functional_i.md)
 * [Historical Debugging](debugging.md)
 
 Still working through [Bill Hails’ awesome book](http://billhails.net/Book/). Adding to the FScheme interpreter from [the previous post](intro.md). Now we’ll add `let`. To do this we’re changing the evaluation model into an environment-passing one.

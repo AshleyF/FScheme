@@ -17,7 +17,7 @@ See [~~blog series~~](http://blogs.msdn.com/b/ashleyf/archive/tags/fscheme/) - B
 * [Turning Your Brain Inside Out With Continuations](Docs/continuations.md)
 * [Playing Dice with the Universe](Docs/amb.md)
 * [Functional I/O (or at least "O")](Docs/functional_o.md)
-* [Functional I/O (including "I" this time](Docs/functinal_i.md)
+* [Functional I/O (including "I" this time](Docs/functional_i.md)
 * [Historical Debugging](Docs/debugging.md)
 
 Setup
