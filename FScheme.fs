@@ -187,7 +187,7 @@ and Lambda cont env = function
             let rec mapbind acc = function
                 | (Symbol(p), a) :: t -> eval (fun x -> mapbind ((p, ref x) :: acc) t) env' a
                 | [] ->
-                    let env'' = List.rev acc |> extend (env' @ env) // extend the captured definition-time environment
+                    let env'' = List.rev acc |> extend (env @ env') // extend the captured definition-time environment
                     eval cont' env'' body
                 | _ -> failwith "Malformed lambda param."
             mapbind [] (zip args parameters)
