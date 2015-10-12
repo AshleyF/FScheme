@@ -23,7 +23,7 @@ As a warm-up, I’m going through [Bill Hails’ absolutely awesome book](http:/
 
 ## Tokenizer
 
-I kind of hate these kind of state machine parsers. Later I’ll come back and redo this as parser combinators or lex/yacc, etc. but for now it’s simple enough (just strings, numbers and symbols):
+I kind of hate these sort of state machine parsers. Later I’ll come back and redo this as parser combinators or lex/yacc, etc. but for now it’s simple enough (just strings, numbers and symbols):
 
 ``` fsharp
 open System 
