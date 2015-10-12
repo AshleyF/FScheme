@@ -21,7 +21,7 @@ This is the second in the fourteen part series:
 
 Perhaps this post should have gone along with the [one about macros](macros.md) and how Lisp is a “programmable programming language.” The common tension in any language or runtime design is how much to build in as primitives and how much to implement as libraries within the language or atop the runtime. Many of the primitives we’ve already built into the interpreter are really not so primitive at all and can be defined in terms of each other.
 
-For example, we introduced ‘list’ as a convenience to avoid nested ‘cons’. The expression (list a b c) is equivalent to (cons a (cons b (cons c ()))). We could define ‘list’ as a macro in terms of ‘cons’ or maybe in terms of ‘quote’ and ‘eval’. Deciding what subset of Scheme to consider truly primitive, in terms of which seemingly primitive things are defined, is a balancing act. If you really want to go crazy you can ultimately define everything in terms of ‘lambda’ or ‘macro’ (see this fun post!).
+For example, we introduced ‘list’ as a convenience to avoid nested ‘cons’. The expression (list a b c) is equivalent to (cons a (cons b (cons c ()))). We could define ‘list’ as a macro in terms of ‘cons’ or maybe in terms of ‘quote’ and ‘eval’. Deciding what subset of Scheme to consider truly primitive, in terms of which seemingly primitive things are defined, is a balancing act. If you really want to go crazy you can ultimately define everything in terms of ‘lambda’ or ‘macro’ (see [this fun post!](http://blogs.msdn.com/b/ashleyf/archive/2008/12/03/the-lambda-calculus.aspx)).
 
 ## The Mother ‘load’
 
