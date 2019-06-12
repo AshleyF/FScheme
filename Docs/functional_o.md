@@ -130,6 +130,6 @@ And voila!
 
 ## What About Input?
 
-In the [next post](funcional_i.md) we add the “I” of I/O.
+In the next post we add the “I” of I/O.
 
 ## Next: [Functional I/O (including "I" this time)](functional_i.md)
