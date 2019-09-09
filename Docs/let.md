@@ -2,7 +2,7 @@
 
 This is the second in the fourteen part series:
 
-* [Scheme in F#](Docs/intro.md)
+* [Scheme in F#](intro.md)
 * Just 'let' Me Be!
 * [Lambda the Ultimate!](lambda.md)
 * [Rinse and Recurse](recurse.md)
