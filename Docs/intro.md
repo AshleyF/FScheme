@@ -68,7 +68,7 @@ let tokenize source =
 
 ## Parser
 
-The near-equivalence between syntax and semantics in Scheme makes the parser trivial. There’s almost a 1:1 correspondence between tokens and expressions. One exception is the `Open`/`Close` tokens denote Expression lists:
+The near-equivalence between syntax and semantics in Scheme makes the parser trivial. There’s almost a 1:1 correspondence between tokens and expressions. One exception is that the `Open`/`Close` tokens denote Expression lists:
 
 ``` fsharp
 type Expression = 
@@ -113,7 +113,7 @@ let rec print = function
 
 ## Primitives
 
-We begin with just a few primitives (which are simply Expression –> Expression functions) for doing basic math and conditionals and seed a global environment with them:
+We begin with just a few primitives (which are simply Expression –> Expression functions) for doing basic math and conditionals and to seed a global environment with them:
 
 ``` fsharp
 let Multiply args = 
@@ -145,7 +145,7 @@ and environment =
 
 ## Eval/Apply
 
-The classic yin/yang of eval/apply are very easy to implement. Literals eval to themselves, symbols are looked up in the environment, and lists are applied. Special forms are, well, special in that they don’t eval their arguments up front; leaving it up to the callee (e.g. `If` will eval one of two expressions depending on the conditional).
+The classic yin/yang of eval/apply are very easy to implement. Literals eval to themselves, symbols are looked up in the environment, and lists are applied. Special forms are, well, special in that they don’t eval their arguments up front; leaving it up to the callee (e.g. `If` will eval one of two expressions depending on the conditional). This is important to allow short-circuiting.
 
 Notice that `If` and `environment` above along with eval and apply below are all mutually recursive:
 

@@ -94,7 +94,7 @@ and Let env = function
 
 ## Tests
 
-Add a couple test cases:
+Add a couple of test cases:
 
 ``` fsharp
 case "(let ((x 2)) x)" "2" // simple let 

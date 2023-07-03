@@ -105,7 +105,7 @@ and Ambivalent cont env args =
 
 Whenever we’re asked to produce an ambivalent result, we first take the current continuation and push a recursive ‘amb’ call onto a backtrack stack and then yield the first choice. This backtrack stack is the key to it all. It represents all the points in the execution at which we made an arbitrary choice; all the points at which we split the universe. The continuation, along with the remaining list of choices, is enough information to later come back and choose a different parallel universe any time we like!
 
-If ever we’re asked to yield a choice from an empy list of options then we abandon the current continuation (just don’t call it) and force a backtrack. Additionally, we allow forcing a backtrack from the REPL by typing “?”:
+If ever we’re asked to yield a choice from an empty list of options then we abandon the current continuation (just don’t call it) and force a backtrack. Additionally, we allow forcing a backtrack from the REPL by typing “?”:
 
 ``` fsharp
 let rep env = 

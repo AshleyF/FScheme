@@ -25,9 +25,9 @@ Now we’re going to add the all-powerful ‘lambda’! Since we’ve already do
 
 Essentially, it returns a new function that when called will do the following:
 
-1. Create a new environment frame, binding parameter to call-time arguments which are evaluated in the **caller’s environment**
-2. Extend the captured **definition-time environment** with this new frame
-3. Finally, eval the body in this extended environment
+1. Creates a new environment frame, binding parameters to call-time arguments which are evaluated in the **caller’s environment**
+2. Extends the captured **definition-time environment** with this new frame
+3. Finally, evals the body in this extended environment
 
 ``` fsharp
 and Lambda env = function 
@@ -43,7 +43,7 @@ and Lambda env = function
     | _ -> failwith "Malformed Lambda."
 ```
 
-When Lambda is called, it’s given the definition-time environment as env. We capture this by way of the inner ‘closure’ function immediately returned as a Function(closure) Expression. Notice that ‘closure’ itself takes the call-time environment as env’ (with a prime mark). Later, when the function happens to be called (potentially in a completely different scope) it is passed the caller’s environment and does it’s magic.
+When Lambda is called, it’s given the definition-time environment as `env`. We capture this by way of the inner `closure` function immediately returned as a Function(closure) Expression. Notice that `closure` itself takes the call-time environment as `env'` (with a prime mark). Later, when the function happens to be called (potentially in a completely different scope) it is passed the caller’s environment and does it’s magic.
 
 We just need to add this guy to the global environment as a special form and we’re done:
 

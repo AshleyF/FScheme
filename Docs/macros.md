@@ -19,7 +19,7 @@ This is the seventh in the fourteen part series:
 
 ## The Soul of Scheme
 
-We’re now getting into the language-oriented features of Scheme. This is why Scheme is one of my very favorite languages. Scheme is of course a multi-paradigm language; functional, imperative (next post), object oriented (soon), but most wonderfully and uniquely language-oriented. In object-oriented programming the approach is to extend the type system to your problem domain and then solve the domain-specific problem at hand using these new types. In language-oriented development you first extend the language itself (not just the type system) with domain specific constructs and then solve the problem. All of the recent hype around DSLs is old hat for Lisp guys.
+We’re now getting into the language-oriented features of Scheme. This is why Scheme is one of my very favorite languages. Scheme is of course a multi-paradigm language; functional, imperative (next post), object oriented (soon), but most wonderfully and uniquely language-oriented. In object-oriented programming the approach is to extend the type system to your problem domain and then solve the domain-specific problem at hand using these new types. In language-oriented development you first extend the language itself (not just the type system) with domain specific constructs and then solve the problem. All of the recent hype (circa 2007) around DSLs is old hat for Lisp guys.
 
 Lisp has been called a “programmable programming language" and this language-oriented approach is what Alan Kay meant when he said, “Lisp isn't a language, it's a building material." I love how Paul Graham phrased the whole creative experience in his book On Lisp: “Language and program evolve together. Like the borders between two warring states, the boundary between language and program is drawn and redrawn, until eventually it comes to rest along the mountains and rivers, the natural frontiers of your problem.”
 
@@ -41,7 +41,7 @@ and Quote env =
 function [e] -> unquote e | _ -> failwith "Malformed 'quote'."
 ```
 
-This lets us do things like `(quote (* 2 (- 5 2)))` and instead of getting `6`, we get nested list structure containing symbols and numbers; literally: `(* 2 (- 5 2))`. If we want to evaluation just part of it we could say `(quote (* 2 (unquote (- 5 2))))` and get `(* 2 3)`. Notice the `unquote` is more like a keyword that only has meaning within a quoted expression.
+This lets us do things like `(quote (* 2 (- 5 2)))` and instead of getting `6`, we get nested list structure containing symbols and numbers; literally: `(* 2 (- 5 2))`. If we want to evaluation just part of it we could say `(quote (* 2 (unquote (- 5 2))))` and get `(* 2 3)`. Notice that `unquote` is more like a keyword that only has meaning within a quoted expression.
 
 Using `quote` and `unquote` is extremely common and could use a more optimized syntax. Yes, I did just say “syntax.” This is one place where we will consider breaking the homoiconicity and introduce special syntax. Internally (in the AST), we will still have `quote` and `unquote` symbols in function application form (and you’re free to stick with that), but the syntax will be simplified to an apostrophe or comma preceding expressions to be quoted or unquoted respectively. This can be handled at lexing/parsing time. First add to the tokenizer:
 
@@ -58,7 +58,7 @@ let rec tokenize' acc = function
     | '"' :: t -> // start of string           // <-- added
 ```
 
-Then the parser. We factor our the Open match a bit and reuse for `Quote :: Open` and `Unquote :: Open`:
+Then in the parser, we factor our the `Open` match a bit and reuse for `Quote :: Open` and `Unquote :: Open`:
 
 ``` fsharp
 let rec list f t acc = 
@@ -88,7 +88,7 @@ So now we can say `(eval ‘(* 2 ,(- 5 2)))` and get `6`.
 
 Now for the grand finale. We want to be able to introduce our own special forms into the language; to program the programming language. It is true that [`lambda`](lambda.md) allows us to add things that look like first class primitives; nearly indistinguishable from built-in functions. But there are limitations.
 
-For example, let’s try to build `and` which will take two arguments and return true (`1`) if both are true. The catch is that it should have the same semantics of the real `and` which would be a special form that doesn’t evaluate its arguments up front but instead “short circuits” in that if the first argument evaluates to false it shouldn’t bother to evaluate the second. This would be partially for efficiency but more importantly to maintain workable semantics. What if, for example, the second argument were a recursive call and the `and` expression was the base case? Eagerly evaluating could cause an infinite loop!
+For example, let’s try to build `and` which will take two arguments and return true (`1`) if both are true. The catch is that it should have the same semantics of the real `and` which would be a special form that doesn’t evaluate its arguments up front but instead “short-circuits” in that it shouldn’t bother to evaluate the second argument if the first argument evaluates to false. This would be partially for efficiency but more importantly to maintain workable semantics. What if, for example, the second argument were a recursive call and the `and` expression was the base case? Eagerly evaluating could cause an infinite loop!
 
 Using only `lambda`, we could try `(let ((and (lambda (a b) (if a (if b 1 0) 0)))) (and 0 BOOM))`. Oops, we see an error (No binding for 'BOOM'.) even though it should not have touched that, once it realized that the first argument in `(and 0 BOOM)` is false (`0`). The `if` is indeed a special form and short-circuits, but the issue is that all of the arguments to `and` are evaluated before calling the lambda. That’s the nature of applicative order languages (lazy languages like Haskell need no “special form” distinction).
 

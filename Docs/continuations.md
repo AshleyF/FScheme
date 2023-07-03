@@ -55,7 +55,7 @@ let rec fac n a c = if n = 0 then c a else fac (n - 1) (n * a) c
 
 This is really a mechanical transformation of the original TCO version.
 
-Side note: Luckily for us, F# supports TCO. In other languages it may be necessary to implement something like the trampoline in his book. The idea is to not call continuations directly, but instead to always call a central function with a thunk that when invoked will call the continuation. This keeps the stack from growing and actually has a side benefit of centralizing all continuation dispatch which allows for some cool tricks. Maybe I’ll write another post on the trampoline later.
+Side note: Luckily for us, F# supports TCO. In other languages it may be necessary to implement something like the trampoline in Bill's book. The idea is to not call continuations directly, but instead to always call a central function with a thunk that when invoked will call the continuation. This keeps the stack from growing and actually has a side benefit of centralizing all continuation dispatch which allows for some cool tricks. Maybe I’ll write another post on the trampoline later.
 
 ## Transforming To CPS
 
@@ -256,7 +256,7 @@ We’ve gone to all of this work rewriting the interpreter using CPS everywhere,
 
 As far as the interpreter, we could use the fact that we’re internally using CPS to now build exception handling for example. We could add ‘try’ and ‘catch’ keywords to the interpreter and the implementation would be simple given our new architecture. We could imagine adding an async-workflows-like feature or threading or coroutines of any number of other new features, now made easier by having converted everything to CPS. All of these would be features added as new primitives to the interpreter itself.
 
-However, remember all the talk about how the [soul of Scheme is as a programmable programming language](macros.md)? The big idea is to imagine exposing the CPS mechanics to the running programs. Programs execute in one world while the interpreter is implemented in another. We want to add a single small hook joining the two worlds in a controlled way. It’s a very dangerous feature and could easily be abused. The point though is that Scheme is not meant to be the direct implementation language for a problem domain. Instead, it’s expected that a domain specific language will be build atop this language kernel. This shows the minimalistic nature of Scheme. Rather than build in various controlled features such as structured exception handling or yielding or threading, we build in the single essence of all of them and leave it up to the DSL author to implement as a library.
+However, remember all the talk about how the [soul of Scheme is as a programmable programming language](macros.md)? The big idea is to imagine exposing the CPS mechanics to the running programs. Programs execute in one world while the interpreter is implemented in another. We want to add a single small hook joining the two worlds in a controlled way. It’s a very dangerous feature and could easily be abused. The point though is that Scheme is not meant to be the direct implementation language for a problem domain. Instead, it’s expected that a domain specific language will be build atop this language kernel. This shows the minimalistic nature of Scheme. Rather than build in various controlled features such as structured exception handling or yielding or threading, we build in the single essence of all of them and leave it up to the DSL author to implement them in a library.
 
 ## Call with Current Continuation
 
